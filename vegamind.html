@@ -325,19 +325,6 @@
 		// - https://revealjs.com/config/
 
 		Reveal.initialize({
-			multiplex: {
-				// Example values. To generate your own, see the socket.io server instructions.
-				secret: document.cookie.slice(5) || null, // null so the clients do not have control of the master presentation
-				id: '33f6481f9173a1d0', // id, obtained from socket.io server
-				url: 'https://reveal-multiplex.glitch.me' // Location of your socket.io server
-			},
-
-			// Don't forget to add the dependencies
-			dependencies: [
-				{ src: 'https://reveal-multiplex.glitch.me/socket.io/socket.io.js', async: true },
-				{ src: 'https://reveal-multiplex.glitch.me/master.js', async: true },
-				{ src: 'https://reveal-multiplex.glitch.me/client.js', async: true }
-			],
 			hash: true,
 
 			// Learn about plugins: https://revealjs.com/plugins/
