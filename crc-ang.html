@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Komunikacijsa vezja in naprave</title>
+		<title>Communication circuits and devices</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -16,16 +16,20 @@
 		<script src="plugin/math/math.js"></script>
 
 		<style>
-			.grid-container {
+			.reveal .grid-container {
 				display: grid;
-				grid-template-columns: auto auto auto;
-				padding: 10px;
+				grid-template-columns: repeat(4, 25%);
+				gap: 10px;
 			}
-			.grid-item {
-				border: 2px solid rgba(255, 255, 255, 0.8);
-				padding: 20px;
-				font-size: 30px;
+	
+			.reveal .grid-item {
 				text-align: center;
+				border-right: 3px solid white;
+				margin-right: -11px;
+			}
+	
+			.profile {
+				width: 65%;
 			}
 		</style>
 	</head>
@@ -37,7 +41,7 @@
 						<img src="https://www.explainxkcd.com/wiki/images/thumb/e/e9/data_quality_2x.png/671px-data_quality_2x.png" />
 					</section>
 					<section data-auto-animate>
-						<h2>Communication circuits <br> and devices</h2>
+						<h2>Communication circuits and devices</h2>
 						<img src="https://www.explainxkcd.com/wiki/images/thumb/e/e9/data_quality_2x.png/671px-data_quality_2x.png" />
 						<p>Jaka Kovač S51JK, G3B</p>
 					</section>
@@ -47,74 +51,51 @@
 						<h2>Digital communication</h2>
 					</section>
 					<section>
-						<h3>ASCII</h3>
-						<img class="fragment" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/USASCII_code_chart.png/1024px-USASCII_code_chart.png" />
+						<h3 class="fragment" data-autoslide="200">ASCII</h3>
+						<img class="fragment" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/USASCII_code_chart.png/1024px-USASCII_code_chart.png" style="height: 50vh;"/>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h2>Mathematics behind CRC</h2>
 					</section>
-					<section data-auto-animate>
-						<h3>Finite fileds</h3>
-						<table>
-						<tbody>
-							<tr>
-								<td>$0 + 0 = 0$</td>
-								<td>$0 - 0 = 0$</td>
-							</tr>
-							<tr>
-								<td>$0 + 1 = 1$</td>
-								<td>$0 - 1 = 1$</td>
-							</tr>
-							<tr>
-								<td>$1 + 0 = 1$</td>
-								<td>$1 - 0 = 1$</td>
-							</tr>
-							<tr>
-								<td>$1 + 1 = 0$</td>
-								<td>$1 - 1 = 0$</td>
-							</tr>
-						</tbody>
-						</table>
-					</section>
-					<section data-auto-animate>
-						<h3>Finite fileds</h3>
-						<table>
-						<tbody>
-							<tr>
-								<td>$0 * 0 = 0$</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>$0 * 1 = 0$</td>
-								<td>$0 / 1 = 0$</td>
-							</tr>
-							<tr>
-								<td>$1 * 0 = 0$</td>
-								<td>$1 / 0 = 1$</td>
-							</tr>
-							<tr>
-								<td>$1 * 1 = 1$</td>
-								<td></td>
-							</tr>
-						</tbody>
-						</table>
+					<section>
+						<div class="grid-container">
+							<div class="grid-item fragment" data-fragment-index="1" data-autoslide="300">$0 + 0 = 0$</div>
+							<div class="grid-item fragment" data-fragment-index="1">$0 - 0 = 0$</div>
+							<div class="grid-item fragment" data-fragment-index="1">$0 * 0 = 0$</div>
+							<div class="grid-item fragment" data-fragment-index="1" style="border-right: 0px !important;"></div>
+							
+							<div class="grid-item fragment" data-fragment-index="2" data-autoslide="300">$0 + 1 = 1$</div>
+							<div class="grid-item fragment" data-fragment-index="2">$0 - 1 = 1$</div>
+							<div class="grid-item fragment" data-fragment-index="2">$0 * 1 = 0$</div>
+							<div class="grid-item fragment" data-fragment-index="2" style="border-right: 0px !important;">$0 / 1 = 0$</div>
+
+							<div class="grid-item fragment" data-fragment-index="3" data-autoslide="300">$1 + 0 = 1$</div>
+							<div class="grid-item fragment" data-fragment-index="3">$1 - 0 = 1$</div>
+							<div class="grid-item fragment" data-fragment-index="3">$1 * 0 = 0$</div>
+							<div class="grid-item fragment" data-fragment-index="3" style="border-right: 0px !important;">$1 / 1 = 1$</div>
+
+							<div class="grid-item fragment" data-fragment-index="4" >$1 + 1 = 0$</div>
+							<div class="grid-item fragment" data-fragment-index="4">$1 - 1 = 0$</div>
+							<div class="grid-item fragment" data-fragment-index="4">$1 * 1 = 1$</div>
+							<div class="grid-item fragment" data-fragment-index="4" style="border-right: 0px !important;"></div>
+						</div>
 					</section>
 
 					<section>
 						<h3>Polynomials</h3>
 					</section>
 					<section>
-						<h3>Encoding message as polynomial</h3>
+						<h3>Polynimial devision</h3>
 					</section>
 					<section>
-						<h3>Polynomial devision</h3>
+						<h3>Polynomial encoding</h3>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>Cyclic redundany check</h2>
+						<h2>Cyclic redundany check - CRC</h2>
 					</section>
 					<section>
 						<h3>CRC generation</h3>
@@ -127,7 +108,7 @@
 					<h2 id="one">Circuit design</h2>
 				</section>
 				<section data-auto-animate>
-					<h2 id="one">Circuit design</h2>
+					<h2 id="one">Dizajn vezja</h2>
 					<img src="./circuit.png" height="500vh"/>
 				</section>
 				<section>
@@ -135,8 +116,6 @@
 					<ul>
 						<li>Ben Eater: <i style="font-style: italic;">Hardware build: CRC calculation</i></li>
 						<li>Ben Eater: <i style="font-style: italic;">How do CDCs work?</i></li>
-						<li>J. Vraničar et. al: <i style="font-style: italic;">Priročnik za radioamaterje</i></li>
-						<li>S51KJ, S54UNC, S50ZK: <i style="font-style: italic;">Radioamaterski tečaj 2022</i></li>
 					</ul>
 				</section>
 			</div>
